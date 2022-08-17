@@ -83,8 +83,8 @@ task RunCollectSVEvidence {
     File split_out_index = "${sample_id}.sr.txt.gz.tbi"
     File disc_out = "${sample_id}.pe.txt.gz"
     File disc_out_index = "${sample_id}.pe.txt.gz.tbi"
-    File sd_out = "${sample_id}.sd.txt.gz"
-    File sd_out_index = "${sample_id}.sd.txt.gz.tbi"
+    File sd_out = "${sample_id}.ld.txt.gz"
+    File sd_out_index = "${sample_id}.ld.txt.gz.tbi"
   }
   command <<<
 
@@ -96,7 +96,7 @@ task RunCollectSVEvidence {
         -I ~{cram} \
         --sr-file "~{sample_id}.sr.txt.gz" \
         --pe-file "~{sample_id}.pe.txt.gz" \
-        --allele-count-file "~{sample_id}.sd.txt.gz" \
+        --allele-count-file "~{sample_id}.ld.txt.gz" \
         --allele-count-vcf ~{sd_locs_vcf} \
         --sample-name ~{sample_id} \
         -R ~{reference_fasta}
