@@ -43,7 +43,7 @@ ARG MELT_RELEASE=2.0.5
 ARG MELT_DIR="/MELT/"
 RUN mkdir -p ${MELT_DIR}
 WORKDIR ${MELT_DIR}
-ADD MELTv${MELT_RELEASE}_patch.tar.gz .
+ADD dockerfiles/melt/MELTv${MELT_RELEASE}_patch.tar.gz .
 RUN echo "export PATH=${MELT_DIR}/MELTv${MELT_RELEASE}_patch/:$PATH" > /etc/profile.d/MELT.sh
 ENV PATH="${MELT_DIR}/MELTv${MELT_RELEASE}_patch/:$PATH"
 
